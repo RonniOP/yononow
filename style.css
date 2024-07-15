@@ -1,0 +1,47 @@
+#board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px); /* Adjusted column width */
+    grid-template-rows: repeat(3, 100px); /* Adjusted row height */
+    gap: 5px; /* Reduced gap between cells */
+    max-width: 320px; /* Adjusted maximum width */
+    width: 100%;
+}
+
+@media (min-width: 601px) {
+    #board {
+        grid-template-columns: repeat(3, 120px); /* Default column width for larger screens */
+        grid-template-rows: repeat(3, 120px); /* Default row height for larger screens */
+        gap: 10px; /* Default gap between cells for larger screens */
+    }
+}
+
+.cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3em; /* Adjusted font size */
+    color: #FFFFFF;
+    background-color: #888888;
+    border: 3px solid #fff;
+    cursor: pointer;
+    transition: background-color 0.1s;
+}
+
+@media (max-width: 600px) {
+    .cell {
+        font-size: 6vw; /* Adjusted font size for smaller screens */
+        width: calc(33.33% - 10px); /* Adjusted width with reduced gap */
+        height: calc(33.33% - 10px); /* Adjusted height with reduced gap */
+    }
+    #board {
+        max-width: 320px; /* Limit board width on smaller screens */
+    }
+}
+
+@media (min-width: 601px) and (max-width: 800px) {
+    .cell {
+        font-size: 4vw; /* Adjusted font size for medium-sized screens */
+        width: calc(33.33% - 15px); /* Adjusted width with reduced gap */
+        height: calc(33.33% - 15px); /* Adjusted height with reduced gap */
+    }
+}
